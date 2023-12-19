@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		B0172BFC2B31D1D8006597A8 /* ArticGalleryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0172BFB2B31D1D8006597A8 /* ArticGalleryTests.swift */; };
 		B0172C062B31D1D8006597A8 /* ArticGalleryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0172C052B31D1D8006597A8 /* ArticGalleryUITests.swift */; };
 		B0172C082B31D1D8006597A8 /* ArticGalleryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0172C072B31D1D8006597A8 /* ArticGalleryUITestsLaunchTests.swift */; };
+		B0172C162B31D6AB006597A8 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = B0172C152B31D6AB006597A8 /* Network */; };
+		B0172C192B31DE2E006597A8 /* List in Frameworks */ = {isa = PBXBuildFile; productRef = B0172C182B31DE2E006597A8 /* List */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0172C192B31DE2E006597A8 /* List in Frameworks */,
+				B0172C162B31D6AB006597A8 /* Network in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +147,10 @@
 			dependencies = (
 			);
 			name = ArticGallery;
+			packageProductDependencies = (
+				B0172C152B31D6AB006597A8 /* Network */,
+				B0172C182B31DE2E006597A8 /* List */,
+			);
 			productName = ArticGallery;
 			productReference = B0172BE72B31D1D6006597A8 /* ArticGallery.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +223,10 @@
 				Base,
 			);
 			mainGroup = B0172BDE2B31D1D6006597A8;
+			packageReferences = (
+				B0172C142B31D6AB006597A8 /* XCLocalSwiftPackageReference "Packages/Network" */,
+				B0172C172B31DE2E006597A8 /* XCLocalSwiftPackageReference "Packages/List" */,
+			);
 			productRefGroup = B0172BE82B31D1D6006597A8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -430,6 +442,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,6 +472,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -588,6 +602,28 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		B0172C142B31D6AB006597A8 /* XCLocalSwiftPackageReference "Packages/Network" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/Network;
+		};
+		B0172C172B31DE2E006597A8 /* XCLocalSwiftPackageReference "Packages/List" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/List;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B0172C152B31D6AB006597A8 /* Network */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Network;
+		};
+		B0172C182B31DE2E006597A8 /* List */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = List;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B0172BDF2B31D1D6006597A8 /* Project object */;
 }

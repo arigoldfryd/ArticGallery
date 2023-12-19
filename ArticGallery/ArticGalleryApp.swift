@@ -5,6 +5,7 @@
 //  Created by Ariel on 19/12/2023.
 //
 
+import Network
 import SwiftUI
 
 @main
