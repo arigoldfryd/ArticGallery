@@ -19,10 +19,10 @@ struct DetailTitle: View {
                 .fontWeight(.medium)
                 .padding(.top)
             
-            Text("(\(year)")
-                .font(.subheadline)
-                .fontWeight(.light)
-                .padding(.top)
+//            Text("(\(year)")
+//                .font(.subheadline)
+//                .fontWeight(.light)
+//                .padding(.top)
         }
     }
 }

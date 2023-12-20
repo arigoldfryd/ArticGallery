@@ -10,7 +10,7 @@ import Foundation
 public struct Artwork: Hashable {
     public let id: Int
     public let title: String
-    public let artist: Artist
+    public var artist: Artist
     public let imageURL: String?
     
     public init(id: Int, title: String, artist: Artist, imageURL: String?) {

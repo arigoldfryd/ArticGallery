@@ -6,19 +6,30 @@
 //
 
 import SwiftUI
+import Models
 
 public struct ArtworkDetailView: View {
     
-    public init() {}
+    @State var viewModel: DetailViewModel
+    
+    public init(viewModel: DetailViewModel) {
+        self.viewModel = viewModel
+    }
     
     public var body: some View {
         NavigationView {
             ScrollView {
                 VStack(alignment: .leading, spacing: 10) {
-                    DetailImage()
-                    DetailTitle(title: "The Starry Night", year: "1983")
-                    DetailAuthorTitle(title: "Vicent Van Gogh")
-                    DetailDescription(description: "Van Gogh's night sky is a field of roiling energy. \nBelow the exploding stars, the village is a placo of quiet order. Connecting earth and sky is the flamelike cypress, a tree traditionally associated with graveyards and mourning. But death was not ominous for van Gogh.")
+
+                    DetailImage(url: viewModel.artwork.imageURL)
+                    
+                    DetailTitle(title: viewModel.artwork.title, year: "1983")
+
+                    DetailAuthorTitle(title: viewModel.artwork.artist.title)
+                    
+                    if let description = viewModel.artwork.artist.description {
+                        DetailDescription(description: description)
+                    }
                     
                     Divider()
                         .padding(.vertical, 16)
@@ -30,9 +41,9 @@ public struct ArtworkDetailView: View {
                         .font(.headline)
                         .fontWeight(.thin)
                     
-                    
                     Spacer()
                 }
+                .task(viewModel.fetchArtistDetails)
                 .padding(.horizontal)
             }
         }
@@ -40,5 +51,5 @@ public struct ArtworkDetailView: View {
 }
 
 #Preview {
-    ArtworkDetailView()
+    ArtworkDetailView(viewModel: DetailViewModel(artwork: Artwork(id: 0, title: "", artist: Artist(id: 0, title: ""), imageURL: nil)))
 }

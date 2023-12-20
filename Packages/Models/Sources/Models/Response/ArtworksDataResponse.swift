@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct ArtworksDataResponse: Codable, Hashable {
+public struct ArtworksDataResponse: Codable {
     public let id: Int
     public let title: String
     public let artistId: Int?

@@ -6,6 +6,7 @@
 //
 
 import Detail
+import Models
 import SwiftUI
 
 @MainActor
@@ -27,11 +28,9 @@ public struct ListView: View {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(viewModel.artworks, id: \.id) { artwork in
-                        NavigationLink(destination: {
-                            ArtworkDetailView()
-                        }, label: {
+                        NavigationLink(value: artwork) {
                             ListViewCell(artwork: artwork)
-                        })
+                        }
                         .foregroundColor(.black)
                         .task {
                             if viewModel.artworks.last == artwork {
@@ -44,6 +43,9 @@ public struct ListView: View {
             }
             .task {
                 await viewModel.fetchArtworks()
+            }
+            .navigationDestination(for: Artwork.self) { artwork in
+                ArtworkDetailView(viewModel: DetailViewModel(artwork: artwork))
             }
             .navigationTitle("Institute of Art")
             .navigationBarTitleDisplayMode(.inline)
