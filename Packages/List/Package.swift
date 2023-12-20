@@ -14,11 +14,22 @@ let package = Package(
             name: "List",
             targets: ["List"]),
     ],
+    dependencies: [
+        .package(name: "Models", path: "../Models"),
+        .package(name: "Network", path: "../Network"),
+        .package(url: "https://github.com/kean/Nuke", from: "12.0.0"),
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "List"),
+            name: "List",
+            dependencies: [
+                .product(name: "Models", package: "Models"),
+                .product(name: "Network", package: "Network"),
+                .product(name: "NukeUI", package: "Nuke"),
+            ]
+        ),
         .testTarget(
             name: "ListTests",
             dependencies: ["List"]),

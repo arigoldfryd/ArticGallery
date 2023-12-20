@@ -16,6 +16,7 @@
 		B0172C082B31D1D8006597A8 /* ArticGalleryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0172C072B31D1D8006597A8 /* ArticGalleryUITestsLaunchTests.swift */; };
 		B0172C162B31D6AB006597A8 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = B0172C152B31D6AB006597A8 /* Network */; };
 		B0172C192B31DE2E006597A8 /* List in Frameworks */ = {isa = PBXBuildFile; productRef = B0172C182B31DE2E006597A8 /* List */; };
+		B0C2F6532B32335800573DFC /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = B0C2F6522B32335800573DFC /* Models */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0C2F6532B32335800573DFC /* Models in Frameworks */,
 				B0172C192B31DE2E006597A8 /* List in Frameworks */,
 				B0172C162B31D6AB006597A8 /* Network in Frameworks */,
 			);
@@ -150,6 +152,7 @@
 			packageProductDependencies = (
 				B0172C152B31D6AB006597A8 /* Network */,
 				B0172C182B31DE2E006597A8 /* List */,
+				B0C2F6522B32335800573DFC /* Models */,
 			);
 			productName = ArticGallery;
 			productReference = B0172BE72B31D1D6006597A8 /* ArticGallery.app */;
@@ -226,6 +229,7 @@
 			packageReferences = (
 				B0172C142B31D6AB006597A8 /* XCLocalSwiftPackageReference "Packages/Network" */,
 				B0172C172B31DE2E006597A8 /* XCLocalSwiftPackageReference "Packages/List" */,
+				B0C2F6512B32335800573DFC /* XCLocalSwiftPackageReference "Packages/Models" */,
 			);
 			productRefGroup = B0172BE82B31D1D6006597A8 /* Products */;
 			projectDirPath = "";
@@ -612,6 +616,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/List;
 		};
+		B0C2F6512B32335800573DFC /* XCLocalSwiftPackageReference "Packages/Models" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/Models;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -622,6 +630,10 @@
 		B0172C182B31DE2E006597A8 /* List */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = List;
+		};
+		B0C2F6522B32335800573DFC /* Models */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Models;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
