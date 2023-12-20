@@ -17,6 +17,7 @@ let package = Package(
     dependencies: [
         .package(name: "Models", path: "../Models"),
         .package(name: "Network", path: "../Network"),
+        .package(name: "Detail", path: "../Detail"),
         .package(url: "https://github.com/kean/Nuke", from: "12.0.0"),
     ],
     targets: [
@@ -27,6 +28,7 @@ let package = Package(
             dependencies: [
                 .product(name: "Models", package: "Models"),
                 .product(name: "Network", package: "Network"),
+                .product(name: "Detail", package: "Detail"),
                 .product(name: "NukeUI", package: "Nuke"),
             ]
         ),

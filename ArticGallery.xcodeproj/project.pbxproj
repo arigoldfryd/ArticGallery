@@ -17,6 +17,7 @@
 		B0172C162B31D6AB006597A8 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = B0172C152B31D6AB006597A8 /* Network */; };
 		B0172C192B31DE2E006597A8 /* List in Frameworks */ = {isa = PBXBuildFile; productRef = B0172C182B31DE2E006597A8 /* List */; };
 		B0C2F6532B32335800573DFC /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = B0C2F6522B32335800573DFC /* Models */; };
+		B0C2F6562B33396C00573DFC /* Detail in Frameworks */ = {isa = PBXBuildFile; productRef = B0C2F6552B33396C00573DFC /* Detail */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0C2F6532B32335800573DFC /* Models in Frameworks */,
+				B0C2F6562B33396C00573DFC /* Detail in Frameworks */,
 				B0172C192B31DE2E006597A8 /* List in Frameworks */,
 				B0172C162B31D6AB006597A8 /* Network in Frameworks */,
 			);
@@ -153,6 +155,7 @@
 				B0172C152B31D6AB006597A8 /* Network */,
 				B0172C182B31DE2E006597A8 /* List */,
 				B0C2F6522B32335800573DFC /* Models */,
+				B0C2F6552B33396C00573DFC /* Detail */,
 			);
 			productName = ArticGallery;
 			productReference = B0172BE72B31D1D6006597A8 /* ArticGallery.app */;
@@ -230,6 +233,7 @@
 				B0172C142B31D6AB006597A8 /* XCLocalSwiftPackageReference "Packages/Network" */,
 				B0172C172B31DE2E006597A8 /* XCLocalSwiftPackageReference "Packages/List" */,
 				B0C2F6512B32335800573DFC /* XCLocalSwiftPackageReference "Packages/Models" */,
+				B0C2F6542B33396C00573DFC /* XCLocalSwiftPackageReference "Packages/Detail" */,
 			);
 			productRefGroup = B0172BE82B31D1D6006597A8 /* Products */;
 			projectDirPath = "";
@@ -620,6 +624,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/Models;
 		};
+		B0C2F6542B33396C00573DFC /* XCLocalSwiftPackageReference "Packages/Detail" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/Detail;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -634,6 +642,10 @@
 		B0C2F6522B32335800573DFC /* Models */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Models;
+		};
+		B0C2F6552B33396C00573DFC /* Detail */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Detail;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
