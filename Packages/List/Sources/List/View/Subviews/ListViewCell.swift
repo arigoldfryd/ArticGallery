@@ -14,34 +14,7 @@ struct ListViewCell: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            VStack(alignment: .leading, spacing: 0) {
-                if let imageURL = artwork.imageURL {
-                    // TODO: Use NukeUI
-                    AsyncImage(url: URL(string: imageURL))  { phase in
-                        switch phase {
-                        case .empty:
-                            Color.purple.opacity(0.1)
-                        case .success(let image):
-                            image
-                                .resizable()
-                                .scaledToFill()
-                        case .failure(_):
-                            Image(systemName: "exclamationmark.icloud")
-                                .resizable()
-                                .scaledToFit()
-                                .foregroundColor(.white)
-                                .frame(width: 50, height: 50)
-                        @unknown default:
-                            Image(systemName: "exclamationmark.icloud")
-                        }
-                    }
-                }
-            }
-            .frame(height: 200)
-            .frame(minWidth: 0, maxWidth: .infinity)
-            .background(.gray)
-            .clipShape(RoundedRectangle(cornerRadius: 8))
-            
+            ListViewCellImage(imageURL: artwork.imageURL)
             ListViewCellTitle(title: artwork.artist)
         }
     }
