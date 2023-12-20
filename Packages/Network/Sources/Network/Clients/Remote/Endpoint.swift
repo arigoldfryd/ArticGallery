@@ -20,7 +20,7 @@ extension Endpoint {
         components.scheme = "https"
         components.host = "api.artic.edu"
         components.path = "/api/v1/" + path
-        components.queryItems?.append(contentsOf: queryItems)
+        components.queryItems = queryItems
         
         guard let url = components.url else {
             preconditionFailure("Invalid URL components: \(components)")

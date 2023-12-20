@@ -27,12 +27,17 @@ public struct ListView: View {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(viewModel.artworks, id: \.self) { artwork in
                         ListViewCell(artwork: artwork)
+                            .task {
+                                if viewModel.artworks.last == artwork {
+                                    await viewModel.fetchArtworks()
+                                }
+                            }
                     }
                 }
                 .padding()
             }
-            .onAppear {
-                viewModel.getArtworks()
+            .task {
+                await viewModel.fetchArtworks()
             }
             .navigationTitle("Institute of Art")
         }

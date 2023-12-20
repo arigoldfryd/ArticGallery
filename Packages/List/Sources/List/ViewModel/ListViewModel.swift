@@ -14,7 +14,9 @@ import Models
 class ListViewModel {
     
     private(set) var artworks: [Artwork]
-    private var page = 1
+    
+    private var page = 0
+    private var totalPages = Int.max
     
     private let artworksRepository: ArtworksRepository
     
@@ -23,19 +25,24 @@ class ListViewModel {
         self.artworksRepository = artworksRepository
     }
     
-    func getArtworks() {
-        Task {
-            do {
-                // TODO: Add page management
-                
-                let response = try await artworksRepository.getArtworks(page: 1)
-                artworks.append(contentsOf: response.data.map { res in
-                    let url = "https://www.artic.edu/iiif/2/\(res.imageId ?? "")/full/843,/0/default.jpg"
-                    return Artwork(title: res.title, artist: res.artistTitle ?? "Unknown", imageURL: url)
-                })
-            } catch {
-                print(error)
-            }
+    func fetchArtworks() async {
+        if page == totalPages {
+            return
+        }
+        
+        page += 1
+        
+        do {
+            let response = try await artworksRepository.getArtworks(page: page)
+            
+            totalPages = response.pagination.totalPages
+            
+            artworks.append(contentsOf: response.data.map { res in
+                let url = "https://www.artic.edu/iiif/2/\(res.imageId ?? "")/full/843,/0/default.jpg"
+                return Artwork(id: res.id, title: res.title, artist: res.artistTitle ?? "Unknown", imageURL: url)
+            })
+        } catch {
+            print(error)
         }
     }
 }

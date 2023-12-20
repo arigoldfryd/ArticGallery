@@ -21,8 +21,9 @@ struct ListViewCell: View {
 }
 
 #Preview {
-    ListViewCell(artwork: Artwork(title: "Painting",
-                               artist: "Pablo Picasso",
-                               imageURL: "https://www.artic.edu/iiif/2/d349a360-3690-bbc4-5883-22f4cd8bac84/full/843,/0/default.jpg")
+    ListViewCell(artwork: Artwork(id: 0,
+                                  title: "Painting",
+                                  artist: "Pablo Picasso",
+                                  imageURL: "https://www.artic.edu/iiif/2/d349a360-3690-bbc4-5883-22f4cd8bac84/full/843,/0/default.jpg")
     )
 }
