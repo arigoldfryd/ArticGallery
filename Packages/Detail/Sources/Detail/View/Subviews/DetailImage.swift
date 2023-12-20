@@ -30,7 +30,7 @@ struct DetailImage: View {
                 Color.gray
             }
         }
-        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 150, maxHeight: 400)
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 100, maxHeight: .infinity)
         .clipShape(RoundedRectangle(cornerRadius: 12))
         .shadow(radius: 12, x: -5, y: 5)
     }

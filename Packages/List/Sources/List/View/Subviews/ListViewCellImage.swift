@@ -6,6 +6,7 @@
 //
 
 import NukeUI
+import Models
 import SwiftUI
 
 @MainActor
@@ -45,5 +46,5 @@ struct ListViewCellImage: View {
 }
 
 #Preview {
-    ListViewCellTitle(title: "Picasso")
+    ListViewCellImage(imageURL: Artwork.placeholder().imageURL)
 }

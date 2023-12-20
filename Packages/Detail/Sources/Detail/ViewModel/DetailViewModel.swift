@@ -14,23 +14,26 @@ import Models
 public class DetailViewModel {
     
     private(set) var artwork: Artwork
+    private(set) var artist: Artist
     
     private let artistRepository: ArtistRepository
     
     public init(artwork: Artwork, artistRepository: ArtistRepository = DefaultArtistRepository()) {
         self.artwork = artwork
         self.artistRepository = artistRepository
+        self.artist = Artist()
     }
     
     func fetchArtistDetails() async {
+        guard let id = artwork.artistId else { return }
+        
         do {
-            let response = try await artistRepository.getArtist(id: artwork.artist.id)
+            let response = try await artistRepository.getArtist(id: id)
+            let data = response.data
             
-            artwork.artist = Artist(id: response.id ?? 0,
-                                    title: response.title ?? "Unknown",
-                                    birthDate: response.birthDate, 
-                                    deathDate: response.deathDate,
-                                    description: response.description)
+            artist = Artist(id: data.id ?? 0,
+                            title: data.title ?? "Unknown",
+                            description: data.description)
         } catch {
             print(error)
         }

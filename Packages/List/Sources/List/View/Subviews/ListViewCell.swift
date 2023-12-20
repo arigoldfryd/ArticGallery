@@ -15,15 +15,11 @@ struct ListViewCell: View {
     var body: some View {
         VStack(alignment: .leading) {
             ListViewCellImage(imageURL: artwork.imageURL)
-            ListViewCellTitle(title: artwork.artist.title)
+            ListViewCellDescription(text: artwork.placeOfOrigin)
         }
     }
 }
 
 #Preview {
-    ListViewCell(artwork: Artwork(id: 0,
-                                  title: "Painting",
-                                  artist: Artist(id: 0, title:"Pablo Picasso"),
-                                  imageURL: "https://www.artic.edu/iiif/2/d349a360-3690-bbc4-5883-22f4cd8bac84/full/843,/0/default.jpg")
-    )
+    ListViewCell(artwork: Artwork.placeholder())
 }

@@ -12,6 +12,9 @@ struct DetailDescription: View {
     let description: String
     
     var body: some View {
+        Text("About the author")
+            .font(.headline)
+        
         Text(description)
             .fontWeight(.light)
             .padding(.top)

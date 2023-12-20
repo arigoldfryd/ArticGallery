@@ -10,7 +10,6 @@ import SwiftUI
 struct DetailTitle: View {
     
     let title: String
-    let year: String
     
     var body: some View {
         HStack {
@@ -18,15 +17,10 @@ struct DetailTitle: View {
                 .font(.title)
                 .fontWeight(.medium)
                 .padding(.top)
-            
-//            Text("(\(year)")
-//                .font(.subheadline)
-//                .fontWeight(.light)
-//                .padding(.top)
         }
     }
 }
 
 #Preview {
-    DetailTitle(title: "The Starry Night", year: "1983")
+    DetailTitle(title: "The Starry Night")
 }

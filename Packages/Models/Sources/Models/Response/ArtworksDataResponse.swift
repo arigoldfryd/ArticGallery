@@ -11,6 +11,8 @@ public struct ArtworksDataResponse: Codable {
     public let id: Int
     public let title: String
     public let artistId: Int?
-    public let artistTitle: String?
+    public let artistDisplay: String?
     public let imageId: String?
+    public let placeOfOrigin: String?
+    public let mediumDisplay: String?
 }

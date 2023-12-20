@@ -39,8 +39,14 @@ class ListViewModel {
             
             artworks.append(contentsOf: response.data.map { res in
                 let url = "https://www.artic.edu/iiif/2/\(res.imageId ?? "")/full/843,/0/default.jpg"
-                let artist = Artist(id: res.artistId ?? 0, title: res.artistTitle ?? "Unknown")
-                return Artwork(id: res.id, title: res.title, artist: artist, imageURL: url)
+
+                return Artwork(id: res.id,
+                               title: res.title,
+                               artistId: res.artistId,
+                               artistDisplay: res.artistDisplay,
+                               imageURL: url,
+                               placeOfOrigin: res.placeOfOrigin ?? "Unknown Place",
+                               mediumDisplay: res.mediumDisplay)
             })
         } catch {
             print(error)

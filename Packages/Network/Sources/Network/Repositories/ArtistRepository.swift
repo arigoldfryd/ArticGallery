@@ -29,6 +29,11 @@ extension DefaultArtistRepository: ArtistRepository {
 
 extension Endpoint {
     static func artist(id: String) -> Self {
-        Endpoint(path: "agents/\(id)")
+        Endpoint(
+            path: "agents/\(id)",
+            queryItems: [
+                URLQueryItem(name: "fields", value: "id, title, description")
+            ]
+        )
     }
 }

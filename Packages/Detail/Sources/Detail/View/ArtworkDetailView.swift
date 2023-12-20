@@ -19,27 +19,27 @@ public struct ArtworkDetailView: View {
     public var body: some View {
         NavigationView {
             ScrollView {
-                VStack(alignment: .leading, spacing: 10) {
-
+                VStack(alignment: .leading, spacing: 12) {
                     DetailImage(url: viewModel.artwork.imageURL)
                     
-                    DetailTitle(title: viewModel.artwork.title, year: "1983")
+                    DetailTitle(title: viewModel.artwork.title)
 
-                    DetailAuthorTitle(title: viewModel.artwork.artist.title)
+                    DetailPlaceOfOrigin(placeOfOrigin: viewModel.artwork.placeOfOrigin)
                     
-                    if let description = viewModel.artwork.artist.description {
-                        DetailDescription(description: description)
+                    DetailArtistInformation(
+                        information: viewModel.artwork.artistDisplay ?? viewModel.artist.title
+                    )
+                    
+                    if let mediumDisplay = viewModel.artwork.mediumDisplay {
+                        DetailMediumDisplay(mediumDisplay: mediumDisplay)
                     }
                     
                     Divider()
                         .padding(.vertical, 16)
                     
-                    Text("About the author")
-                        .font(.headline)
-                    
-                    Text("1859 - 1240")
-                        .font(.headline)
-                        .fontWeight(.thin)
+                    if let description = viewModel.artist.description {
+                        DetailDescription(description: description)
+                    }
                     
                     Spacer()
                 }
@@ -51,5 +51,5 @@ public struct ArtworkDetailView: View {
 }
 
 #Preview {
-    ArtworkDetailView(viewModel: DetailViewModel(artwork: Artwork(id: 0, title: "", artist: Artist(id: 0, title: ""), imageURL: nil)))
+    ArtworkDetailView(viewModel: DetailViewModel(artwork: Artwork.placeholder()))
 }
