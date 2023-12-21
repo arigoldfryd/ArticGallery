@@ -7,8 +7,14 @@
 
 import Foundation
 
-public struct ArtistDataResponse: Codable {
+public struct ArtistDataResponse: Codable, Equatable {
     public let id: Int?
     public let title: String?
     public let description: String?
+    
+    public init(id: Int?, title: String?, description: String?) {
+        self.id = id
+        self.title = title
+        self.description = description
+    }
 }

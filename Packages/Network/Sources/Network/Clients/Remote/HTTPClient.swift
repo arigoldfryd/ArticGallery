@@ -32,7 +32,7 @@ public class DefaultHTTPClient: HTTPClient {
 }
 
 public extension URLSession {
-    public static var cached: URLSession {
+    static var cached: URLSession {
         let configuration = URLSessionConfiguration.default
         configuration.urlCache = URLCache.shared
         configuration.requestCachePolicy = .returnCacheDataElseLoad

@@ -9,4 +9,8 @@ import Foundation
 
 public struct ArtistResponse: Codable {
     public let data: ArtistDataResponse
+    
+    public init(data: ArtistDataResponse) {
+        self.data = data
+    }
 }
