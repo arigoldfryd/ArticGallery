@@ -37,9 +37,12 @@ import Models
             
             totalPages = response.pagination.totalPages
             
-            artworks.append(contentsOf: response.data.map { res in
-                let url = "https://www.artic.edu/iiif/2/\(res.imageId ?? "")/full/843,/0/default.jpg"
+            artworks.append(contentsOf: response.data.compactMap { res in
+                guard let imageId = res.imageId, !imageId.isEmpty else {
+                    return nil
+                }
 
+                let url = "https://www.artic.edu/iiif/2/\(imageId)/full/843,/0/default.jpg"
                 return Artwork(id: res.id,
                                title: res.title,
                                artistId: res.artistId,
@@ -53,5 +56,11 @@ import Models
         } catch {
             self.error = error.localizedDescription
         }
+    }
+    
+    @Sendable func refreshArtworks() async {
+        page = 0
+        artworks.removeAll()
+        await fetchArtworks()
     }
 }

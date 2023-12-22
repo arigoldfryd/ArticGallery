@@ -42,6 +42,7 @@ public struct ListView: View {
                 .padding()
             }
             .task(viewModel.fetchArtworks)
+            .refreshable(action: viewModel.refreshArtworks)
             .navigationDestination(for: Artwork.self) { artwork in
                 ArtworkDetailView(viewModel: DetailViewModel(artwork: artwork))
             }

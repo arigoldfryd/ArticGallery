@@ -18,7 +18,11 @@ import Models
     var fail = false
     var response: ArtworksResponse = {
         let pagination = ArtworksPaginationResponse(total: 1, limit: 1, offset: nil, totalPages: 3, currentPage: 1, nextUrl: nil)
-        let data = [ArtworksDataResponse(id: 1, title: "Title", artistId: 10, artistDisplay: "ArtistDisplay", imageId: "11", placeOfOrigin: "PlaceOfOrigin", mediumDisplay: "MediumDisplay")]
+        let data = [
+            ArtworksDataResponse(id: 1, title: "Title", artistId: 10, artistDisplay: "ArtistDisplay", imageId: "11", placeOfOrigin: "PlaceOfOrigin", mediumDisplay: "MediumDisplay"),
+            ArtworksDataResponse(id: 1, title: "Title", artistId: 10, artistDisplay: "ArtistDisplay", imageId: nil, placeOfOrigin: "PlaceOfOrigin", mediumDisplay: "MediumDisplay"),
+            ArtworksDataResponse(id: 1, title: "Title", artistId: 10, artistDisplay: "ArtistDisplay", imageId: "", placeOfOrigin: "PlaceOfOrigin", mediumDisplay: "MediumDisplay"),
+        ]
         return ArtworksResponse(pagination: pagination, data: data)
     }()
 
