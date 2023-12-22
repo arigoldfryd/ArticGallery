@@ -10,10 +10,10 @@ import Network
 import Models
 
 @MainActor
-@Observable
-class ListViewModel {
+@Observable class ListViewModel {
     
     private(set) var artworks: [Artwork]
+    private(set) var error: String?
     
     private var page = 0
     private var totalPages = Int.max
@@ -48,8 +48,10 @@ class ListViewModel {
                                placeOfOrigin: res.placeOfOrigin ?? "Unknown Place",
                                mediumDisplay: res.mediumDisplay)
             })
+            
+            error = nil
         } catch {
-            print(error)
+            self.error = error.localizedDescription
         }
     }
 }
