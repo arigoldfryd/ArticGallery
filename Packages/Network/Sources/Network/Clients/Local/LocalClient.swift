@@ -7,30 +7,42 @@
 
 import Foundation
 
-protocol LocalClient {
+public protocol LocalClient {
     func get<T>(forKey key: String) throws -> T? where T: Codable
     func set<T: Encodable>(value: T, forKey key: String) throws
 }
 
-class DefaultLocalClient: LocalClient {
-    typealias SetMethod = (Any?, String) -> Void
-    typealias GetMethod = (String) -> Data?
+enum StorageObject {
+    case artworks(page: Int)
+    case artist(id: Int)
+    
+    var key: String {
+        switch self {
+        case .artworks(let page): return "artworks-\(page)"
+        case .artist(let id): return "artist-\(id)"
+        }
+    }
+}
+
+public class DefaultLocalClient: LocalClient {
+    public typealias SetMethod = (Any?, String) -> Void
+    public typealias GetMethod = (String) -> Data?
     
     private let setValue: SetMethod
     private let getValue: GetMethod
     
-    init(set: @escaping SetMethod = UserDefaults.standard.set,
+    public init(set: @escaping SetMethod = UserDefaults.standard.set,
          get: @escaping GetMethod = UserDefaults.standard.data) {
         self.setValue = set
         self.getValue = get
     }
     
-    func set<T: Encodable>(value: T, forKey key: String) throws {
+    public func set<T: Encodable>(value: T, forKey key: String) throws {
         let encodedData = try JSONEncoder().encode(value)
         setValue(encodedData, key)
     }
     
-    func get<T>(forKey key: String) throws -> T? where T : Decodable, T : Encodable {
+    public func get<T>(forKey key: String) throws -> T? where T : Decodable, T : Encodable {
         guard let encodedData = getValue(key) else { return nil }
         return try JSONDecoder().decode(T.self, from: encodedData)
     }

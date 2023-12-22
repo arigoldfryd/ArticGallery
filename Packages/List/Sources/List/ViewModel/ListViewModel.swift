@@ -20,7 +20,7 @@ import Models
     
     private let artworksRepository: ArtworksRepository
     
-    init(artworks: [Artwork] = [], artworksRepository: ArtworksRepository = DefaultArtworksRepository()) {
+    init(artworks: [Artwork] = [], artworksRepository: ArtworksRepository = DefaultRepository()) {
         self.artworks = artworks
         self.artworksRepository = artworksRepository
     }
@@ -37,12 +37,8 @@ import Models
             
             totalPages = response.pagination.totalPages
             
-            artworks.append(contentsOf: response.data.compactMap { res in
-                guard let imageId = res.imageId, !imageId.isEmpty else {
-                    return nil
-                }
-
-                let url = "https://www.artic.edu/iiif/2/\(imageId)/full/843,/0/default.jpg"
+            artworks.append(contentsOf: response.data.map { res in
+                let url = "https://www.artic.edu/iiif/2/\(res.imageId ?? "")/full/843,/0/default.jpg"
                 return Artwork(id: res.id,
                                title: res.title,
                                artistId: res.artistId,

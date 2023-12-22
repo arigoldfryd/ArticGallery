@@ -12,18 +12,11 @@ public protocol ArtworksRepository {
     func getArtworks(page: Int) async throws -> ArtworksResponse
 }
 
-public class DefaultArtworksRepository {
-    private let httpClient: HTTPClient
-    
-    public init(httpClient: HTTPClient = DefaultHTTPClient()) {
-        self.httpClient = httpClient
-    }
-}
-
-extension DefaultArtworksRepository: ArtworksRepository {
+extension DefaultRepository: ArtworksRepository {
     public func getArtworks(page: Int) async throws -> ArtworksResponse {
-        let urlRequest = URLRequest(url: Endpoint.artworks(page: page).url)
-        return try await httpClient.perform(request: urlRequest)
+        let request = Endpoint.artworks(page: page).urlRequest
+        let object = StorageObject.artworks(page: page)
+        return try await execute(request: request, object: object)
     }
 }
 

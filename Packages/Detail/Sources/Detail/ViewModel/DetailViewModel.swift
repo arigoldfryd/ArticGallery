@@ -19,7 +19,7 @@ public class DetailViewModel {
     
     private let artistRepository: ArtistRepository
     
-    public init(artwork: Artwork, artistRepository: ArtistRepository = DefaultArtistRepository()) {
+    public init(artwork: Artwork, artistRepository: ArtistRepository = DefaultRepository()) {
         self.artwork = artwork
         self.artistRepository = artistRepository
         self.artist = Artist()

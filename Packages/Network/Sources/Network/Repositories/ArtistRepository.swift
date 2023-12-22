@@ -12,18 +12,11 @@ public protocol ArtistRepository {
     func getArtist(id: Int) async throws -> ArtistResponse
 }
 
-public class DefaultArtistRepository {
-    private let httpClient: HTTPClient
-    
-    public init(httpClient: HTTPClient = DefaultHTTPClient()) {
-        self.httpClient = httpClient
-    }
-}
-
-extension DefaultArtistRepository: ArtistRepository {
+extension DefaultRepository: ArtistRepository {
     public func getArtist(id: Int) async throws -> ArtistResponse {
-        let urlRequest = URLRequest(url: Endpoint.artist(id: String(id)).url)
-        return try await httpClient.perform(request: urlRequest)
+        let request = Endpoint.artist(id: String(id)).urlRequest
+        let object = StorageObject.artist(id: id)
+        return try await execute(request: request, object: object)
     }
 }
 

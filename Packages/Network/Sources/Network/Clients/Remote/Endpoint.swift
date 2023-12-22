@@ -28,4 +28,8 @@ extension Endpoint {
         
         return url
     }
+    
+    var urlRequest: URLRequest {
+        URLRequest(url: url)
+    }
 }
