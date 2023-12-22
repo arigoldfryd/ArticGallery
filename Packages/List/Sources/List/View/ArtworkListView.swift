@@ -41,9 +41,7 @@ public struct ListView: View {
                 }
                 .padding()
             }
-            .task {
-                await viewModel.fetchArtworks()
-            }
+            .task(viewModel.fetchArtworks)
             .navigationDestination(for: Artwork.self) { artwork in
                 ArtworkDetailView(viewModel: DetailViewModel(artwork: artwork))
             }

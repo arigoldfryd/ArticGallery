@@ -5,7 +5,6 @@
 //  Created by Ariel on 21/12/2023.
 //
 
-import Combine
 import Network
 import XCTest
 @testable import List
@@ -19,7 +18,7 @@ import XCTest
         let viewModel = ListViewModel(artworks: [], artworksRepository: artworksRepository)
         
         // When
-        let artworksExpectation = XCTestExpectation(description: "Discovery")
+        let artworksExpectation = XCTestExpectation(description: "Artwork")
         withObservationTracking({
             _ = artworksRepository.getArtworksCounter
         }, onChange: {
@@ -49,7 +48,7 @@ import XCTest
         let viewModel = ListViewModel(artworks: [], artworksRepository: artworksRepository)
         
         // When
-        let artworksExpectation = XCTestExpectation(description: "Discovery")
+        let artworksExpectation = XCTestExpectation(description: "Artwork")
         withObservationTracking({
             _ = artworksRepository.getArtworksCounter
         }, onChange: {
@@ -74,7 +73,7 @@ import XCTest
         let viewModel = ListViewModel(artworks: [], artworksRepository: artworksRepository)
         
         // When
-        let artworksExpectation = XCTestExpectation(description: "Discovery")
+        let artworksExpectation = XCTestExpectation(description: "Artwork")
         withObservationTracking({
             _ = artworksRepository.getArtworksCounter
         }, onChange: {

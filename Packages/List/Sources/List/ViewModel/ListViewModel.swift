@@ -25,7 +25,7 @@ import Models
         self.artworksRepository = artworksRepository
     }
     
-    func fetchArtworks() async {
+    @Sendable func fetchArtworks() async {
         if page == totalPages {
             return
         }

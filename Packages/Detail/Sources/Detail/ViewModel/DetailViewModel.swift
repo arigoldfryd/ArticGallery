@@ -15,6 +15,7 @@ public class DetailViewModel {
     
     private(set) var artwork: Artwork
     private(set) var artist: Artist
+    private(set) var error: String?
     
     private let artistRepository: ArtistRepository
     
@@ -24,18 +25,18 @@ public class DetailViewModel {
         self.artist = Artist()
     }
     
-    func fetchArtistDetails() async {
+    @Sendable func fetchArtistDetails() async {
         guard let id = artwork.artistId else { return }
         
         do {
             let response = try await artistRepository.getArtist(id: id)
             let data = response.data
             
-            artist = Artist(id: data.id ?? 0,
-                            title: data.title ?? "Unknown",
-                            description: data.description)
+            artist = Artist(id: data.id ?? 0, title: data.title ?? "Unknown", description: data.description)
+
+            error = nil
         } catch {
-            print(error)
+            self.error = error.localizedDescription
         }
     }
 }
