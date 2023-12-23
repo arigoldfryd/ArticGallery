@@ -12,8 +12,9 @@ import Models
 @MainActor
 @Observable class ListViewModel {
     
-    enum State {
+    enum State: Equatable {
         case loading
+        case loadingNextPage
         case loaded
         case error(String)
     }
@@ -37,8 +38,10 @@ import Models
             return
         }
         
-        if page == 0 {
+        if artworks.isEmpty {
             state = .loading
+        } else {
+            state = .loadingNextPage
         }
         
         page += 1

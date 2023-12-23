@@ -29,17 +29,19 @@ public struct ListView: View {
                 switch viewModel.state {
                 case .loading:
                     loadingView
-                case .loaded:
+                case .loaded, .loadingNextPage:
                     grid
                 case .error(let error):
                     emptyView(error)
                 }
             }
+            .task(viewModel.fetchArtworks)
             .navigationTitle("Institute of Art")
         }
     }
     
     var grid: some View {
+        
         ScrollView {
             LazyVGrid(columns: columns, spacing: 20) {
                 ForEach(viewModel.artworks, id: \.id) { artwork in
@@ -55,12 +57,16 @@ public struct ListView: View {
                 }
             }
             .padding()
+            
+            if viewModel.state == .loadingNextPage {
+                ProgressView()
+            }
         }
-        .task(viewModel.fetchArtworks)
         .refreshable(action: viewModel.fetchArtworks)
         .navigationDestination(for: Artwork.self) { artwork in
             ArtworkDetailView(viewModel: DetailViewModel(artwork: artwork))
         }
+        
     }
     
     var loadingView: some View {
