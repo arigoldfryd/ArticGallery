@@ -11,31 +11,11 @@
 		B0172BED2B31D1D6006597A8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0172BEC2B31D1D6006597A8 /* ContentView.swift */; };
 		B0172BEF2B31D1D8006597A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0172BEE2B31D1D8006597A8 /* Assets.xcassets */; };
 		B0172BF22B31D1D8006597A8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0172BF12B31D1D8006597A8 /* Preview Assets.xcassets */; };
-		B0172BFC2B31D1D8006597A8 /* ArticGalleryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0172BFB2B31D1D8006597A8 /* ArticGalleryTests.swift */; };
-		B0172C062B31D1D8006597A8 /* ArticGalleryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0172C052B31D1D8006597A8 /* ArticGalleryUITests.swift */; };
-		B0172C082B31D1D8006597A8 /* ArticGalleryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0172C072B31D1D8006597A8 /* ArticGalleryUITestsLaunchTests.swift */; };
 		B0172C162B31D6AB006597A8 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = B0172C152B31D6AB006597A8 /* Network */; };
 		B0172C192B31DE2E006597A8 /* List in Frameworks */ = {isa = PBXBuildFile; productRef = B0172C182B31DE2E006597A8 /* List */; };
 		B0C2F6532B32335800573DFC /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = B0C2F6522B32335800573DFC /* Models */; };
 		B0C2F6562B33396C00573DFC /* Detail in Frameworks */ = {isa = PBXBuildFile; productRef = B0C2F6552B33396C00573DFC /* Detail */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		B0172BF82B31D1D8006597A8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B0172BDF2B31D1D6006597A8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B0172BE62B31D1D6006597A8;
-			remoteInfo = ArticGallery;
-		};
-		B0172C022B31D1D8006597A8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B0172BDF2B31D1D6006597A8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B0172BE62B31D1D6006597A8;
-			remoteInfo = ArticGallery;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		B0172BE72B31D1D6006597A8 /* ArticGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArticGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,11 +23,6 @@
 		B0172BEC2B31D1D6006597A8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B0172BEE2B31D1D8006597A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0172BF12B31D1D8006597A8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		B0172BF72B31D1D8006597A8 /* ArticGalleryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArticGalleryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0172BFB2B31D1D8006597A8 /* ArticGalleryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticGalleryTests.swift; sourceTree = "<group>"; };
-		B0172C012B31D1D8006597A8 /* ArticGalleryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArticGalleryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0172C052B31D1D8006597A8 /* ArticGalleryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticGalleryUITests.swift; sourceTree = "<group>"; };
-		B0172C072B31D1D8006597A8 /* ArticGalleryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticGalleryUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,20 +37,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B0172BF42B31D1D8006597A8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B0172BFE2B31D1D8006597A8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -83,8 +44,6 @@
 			isa = PBXGroup;
 			children = (
 				B0172BE92B31D1D6006597A8 /* ArticGallery */,
-				B0172BFA2B31D1D8006597A8 /* ArticGalleryTests */,
-				B0172C042B31D1D8006597A8 /* ArticGalleryUITests */,
 				B0172BE82B31D1D6006597A8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,8 +52,6 @@
 			isa = PBXGroup;
 			children = (
 				B0172BE72B31D1D6006597A8 /* ArticGallery.app */,
-				B0172BF72B31D1D8006597A8 /* ArticGalleryTests.xctest */,
-				B0172C012B31D1D8006597A8 /* ArticGalleryUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,23 +73,6 @@
 				B0172BF12B31D1D8006597A8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		B0172BFA2B31D1D8006597A8 /* ArticGalleryTests */ = {
-			isa = PBXGroup;
-			children = (
-				B0172BFB2B31D1D8006597A8 /* ArticGalleryTests.swift */,
-			);
-			path = ArticGalleryTests;
-			sourceTree = "<group>";
-		};
-		B0172C042B31D1D8006597A8 /* ArticGalleryUITests */ = {
-			isa = PBXGroup;
-			children = (
-				B0172C052B31D1D8006597A8 /* ArticGalleryUITests.swift */,
-				B0172C072B31D1D8006597A8 /* ArticGalleryUITestsLaunchTests.swift */,
-			);
-			path = ArticGalleryUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,42 +101,6 @@
 			productReference = B0172BE72B31D1D6006597A8 /* ArticGallery.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B0172BF62B31D1D8006597A8 /* ArticGalleryTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B0172C0E2B31D1D8006597A8 /* Build configuration list for PBXNativeTarget "ArticGalleryTests" */;
-			buildPhases = (
-				B0172BF32B31D1D8006597A8 /* Sources */,
-				B0172BF42B31D1D8006597A8 /* Frameworks */,
-				B0172BF52B31D1D8006597A8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B0172BF92B31D1D8006597A8 /* PBXTargetDependency */,
-			);
-			name = ArticGalleryTests;
-			productName = ArticGalleryTests;
-			productReference = B0172BF72B31D1D8006597A8 /* ArticGalleryTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		B0172C002B31D1D8006597A8 /* ArticGalleryUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B0172C112B31D1D8006597A8 /* Build configuration list for PBXNativeTarget "ArticGalleryUITests" */;
-			buildPhases = (
-				B0172BFD2B31D1D8006597A8 /* Sources */,
-				B0172BFE2B31D1D8006597A8 /* Frameworks */,
-				B0172BFF2B31D1D8006597A8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B0172C032B31D1D8006597A8 /* PBXTargetDependency */,
-			);
-			name = ArticGalleryUITests;
-			productName = ArticGalleryUITests;
-			productReference = B0172C012B31D1D8006597A8 /* ArticGalleryUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -209,14 +113,6 @@
 				TargetAttributes = {
 					B0172BE62B31D1D6006597A8 = {
 						CreatedOnToolsVersion = 15.1;
-					};
-					B0172BF62B31D1D8006597A8 = {
-						CreatedOnToolsVersion = 15.1;
-						TestTargetID = B0172BE62B31D1D6006597A8;
-					};
-					B0172C002B31D1D8006597A8 = {
-						CreatedOnToolsVersion = 15.1;
-						TestTargetID = B0172BE62B31D1D6006597A8;
 					};
 				};
 			};
@@ -240,8 +136,6 @@
 			projectRoot = "";
 			targets = (
 				B0172BE62B31D1D6006597A8 /* ArticGallery */,
-				B0172BF62B31D1D8006597A8 /* ArticGalleryTests */,
-				B0172C002B31D1D8006597A8 /* ArticGalleryUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -253,20 +147,6 @@
 			files = (
 				B0172BF22B31D1D8006597A8 /* Preview Assets.xcassets in Resources */,
 				B0172BEF2B31D1D8006597A8 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B0172BF52B31D1D8006597A8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B0172BFF2B31D1D8006597A8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,37 +162,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B0172BF32B31D1D8006597A8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B0172BFC2B31D1D8006597A8 /* ArticGalleryTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B0172BFD2B31D1D8006597A8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B0172C062B31D1D8006597A8 /* ArticGalleryUITests.swift in Sources */,
-				B0172C082B31D1D8006597A8 /* ArticGalleryUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B0172BF92B31D1D8006597A8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B0172BE62B31D1D6006597A8 /* ArticGallery */;
-			targetProxy = B0172BF82B31D1D8006597A8 /* PBXContainerItemProxy */;
-		};
-		B0172C032B31D1D8006597A8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B0172BE62B31D1D6006597A8 /* ArticGallery */;
-			targetProxy = B0172C022B31D1D8006597A8 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B0172C092B31D1D8006597A8 /* Debug */ = {
@@ -494,82 +344,6 @@
 			};
 			name = Release;
 		};
-		B0172C0F2B31D1D8006597A8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KTA5MM965B;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.goldfryd.ArticGalleryTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ArticGallery.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ArticGallery";
-			};
-			name = Debug;
-		};
-		B0172C102B31D1D8006597A8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KTA5MM965B;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.goldfryd.ArticGalleryTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ArticGallery.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ArticGallery";
-			};
-			name = Release;
-		};
-		B0172C122B31D1D8006597A8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KTA5MM965B;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.goldfryd.ArticGalleryUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ArticGallery;
-			};
-			name = Debug;
-		};
-		B0172C132B31D1D8006597A8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KTA5MM965B;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.goldfryd.ArticGalleryUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ArticGallery;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -587,24 +361,6 @@
 			buildConfigurations = (
 				B0172C0C2B31D1D8006597A8 /* Debug */,
 				B0172C0D2B31D1D8006597A8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B0172C0E2B31D1D8006597A8 /* Build configuration list for PBXNativeTarget "ArticGalleryTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B0172C0F2B31D1D8006597A8 /* Debug */,
-				B0172C102B31D1D8006597A8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B0172C112B31D1D8006597A8 /* Build configuration list for PBXNativeTarget "ArticGalleryUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B0172C122B31D1D8006597A8 /* Debug */,
-				B0172C132B31D1D8006597A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
