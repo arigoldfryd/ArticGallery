@@ -12,8 +12,15 @@ import Models
 @MainActor
 @Observable class ListViewModel {
     
+    enum State {
+        case loading
+        case loaded
+        case error(String)
+    }
+    
     private(set) var artworks: [Artwork]
     private(set) var error: String?
+    private(set) var state: State = .loaded
     
     private var page = 0
     private var totalPages = Int.max
@@ -28,6 +35,10 @@ import Models
     @Sendable func fetchArtworks() async {
         if page == totalPages {
             return
+        }
+        
+        if page == 0 {
+            state = .loading
         }
         
         page += 1
@@ -49,8 +60,9 @@ import Models
             })
             
             error = nil
+            state = .loaded
         } catch {
-            self.error = error.localizedDescription
+            showError(error)
         }
     }
     
@@ -58,5 +70,11 @@ import Models
         page = 0
         artworks.removeAll()
         await fetchArtworks()
+    }
+    
+    private func showError(_ error: Error) {
+        guard artworks.isEmpty else { return }
+        state = .error(error.localizedDescription)
+        self.error = error.localizedDescription
     }
 }

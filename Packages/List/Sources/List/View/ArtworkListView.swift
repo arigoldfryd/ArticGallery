@@ -25,29 +25,94 @@ public struct ListView: View {
     
     public var body: some View {
         NavigationStack {
-            ScrollView {
-                LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(viewModel.artworks, id: \.id) { artwork in
-                        NavigationLink(value: artwork) {
-                            ListViewCell(artwork: artwork)
-                        }
-                        .foregroundColor(.black)
-                        .task {
-                            if viewModel.artworks.last == artwork {
-                                await viewModel.fetchArtworks()
-                            }
-                        }
-                    }
+            VStack {
+                switch viewModel.state {
+                case .loading:
+                    loadingView
+                case .loaded:
+                    grid
+                case .error(let error):
+                    emptyView(error)
                 }
-                .padding()
-            }
-            .task(viewModel.fetchArtworks)
-            .refreshable(action: viewModel.refreshArtworks)
-            .navigationDestination(for: Artwork.self) { artwork in
-                ArtworkDetailView(viewModel: DetailViewModel(artwork: artwork))
             }
             .navigationTitle("Institute of Art")
             .navigationBarTitleDisplayMode(.inline)
+        }
+    }
+    
+    var grid: some View {
+        ScrollView {
+            LazyVGrid(columns: columns, spacing: 20) {
+                ForEach(viewModel.artworks, id: \.id) { artwork in
+                    NavigationLink(value: artwork) {
+                        ListViewCell(artwork: artwork)
+                    }
+                    .foregroundColor(.black)
+                    .task {
+                        if viewModel.artworks.last == artwork {
+                            await viewModel.fetchArtworks()
+                        }
+                    }
+                }
+            }
+            .padding()
+        }
+        .task(viewModel.fetchArtworks)
+        .refreshable(action: viewModel.refreshArtworks)
+        .navigationDestination(for: Artwork.self) { artwork in
+            ArtworkDetailView(viewModel: DetailViewModel(artwork: artwork))
+        }
+    }
+    
+    var loadingView: some View {
+        VStack {
+            ProgressView()
+                .scaleEffect(1.5)
+                .padding()
+            
+            Text("Loading...")
+                .foregroundColor(.gray)
+                .italic()
+        }
+    }
+    
+    @ViewBuilder
+    func emptyView(_ error: String) -> some View {
+        VStack(alignment: .center) {
+            Spacer()
+            
+            Image(systemName: "exclamationmark.triangle")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 50, height: 50)
+                .foregroundColor(.gray)
+            
+            Text("Oops! Something went wrong.")
+                .font(.headline)
+                .foregroundColor(.black)
+                .bold()
+            
+            Text(error)
+                .font(.footnote)
+                .foregroundColor(.gray)
+                .italic()
+            
+            Button(action: {
+                Task {
+                    await viewModel.fetchArtworks()
+                }
+            }) {
+                Text("Try Again")
+                    .bold()
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
+                    .background(Color.blue)
+                    .cornerRadius(12)
+            }
+            .padding()
+            
+            Spacer()
         }
     }
 }

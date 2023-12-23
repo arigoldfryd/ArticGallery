@@ -18,14 +18,15 @@ public class DefaultRepository {
     }
     
     func execute<Response: Codable>(request: URLRequest, object: StorageObject) async throws -> Response {
-       let key = object.key
-       
-       if let response: Response = try localClient.get(forKey: key) {
-           return response
-       }
-
-       let response: Response = try await httpClient.perform(request: request)
-       try localClient.set(value: response, forKey: key)
-       return response
-   }
+        let key = object.key
+        
+        if let response: Response = try localClient.get(forKey: key) {
+            return response
+        }
+        
+        let response: Response = try await httpClient.perform(request: request)
+        
+        try localClient.set(value: response, forKey: key)
+        return response
+    }
 }
