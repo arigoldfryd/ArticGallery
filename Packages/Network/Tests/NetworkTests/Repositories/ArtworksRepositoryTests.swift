@@ -15,7 +15,7 @@ final class ArtworksRepositoryTests: XCTest {
     
     override func setUpWithError() throws {
         httpClientMock = HTTPClientMock()
-        artworksRepository = DefaultArtworksRepository(httpClient: httpClientMock)
+        artworksRepository = DefaultRepository(httpClient: httpClientMock)
     }
     
     override func tearDownWithError() throws {

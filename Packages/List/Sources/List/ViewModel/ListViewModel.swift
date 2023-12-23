@@ -66,12 +66,6 @@ import Models
         }
     }
     
-    @Sendable func refreshArtworks() async {
-        page = 0
-        artworks.removeAll()
-        await fetchArtworks()
-    }
-    
     private func showError(_ error: Error) {
         guard artworks.isEmpty else { return }
         state = .error(error.localizedDescription)

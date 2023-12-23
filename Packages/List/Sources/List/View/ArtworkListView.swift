@@ -36,7 +36,6 @@ public struct ListView: View {
                 }
             }
             .navigationTitle("Institute of Art")
-            .navigationBarTitleDisplayMode(.inline)
         }
     }
     
@@ -58,7 +57,7 @@ public struct ListView: View {
             .padding()
         }
         .task(viewModel.fetchArtworks)
-        .refreshable(action: viewModel.refreshArtworks)
+        .refreshable(action: viewModel.fetchArtworks)
         .navigationDestination(for: Artwork.self) { artwork in
             ArtworkDetailView(viewModel: DetailViewModel(artwork: artwork))
         }
