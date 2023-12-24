@@ -66,7 +66,9 @@ public struct ListView: View {
         .navigationDestination(for: Artwork.self) { artwork in
             ArtworkDetailView(viewModel: DetailViewModel(artwork: artwork))
         }
-        
+        #if os(iOS)
+        .navigationBarTitleDisplayMode(.inline)
+        #endif
     }
     
     var loadingView: some View {
