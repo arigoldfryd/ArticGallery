@@ -1,6 +1,14 @@
+## Artic (Art Institute of Chicago) Gallery App
+
+ArticApp is an app that displays a gallery of art from the Art Institute of Chicago and the details about each piece of art.
+
+### Tests
+
+Since this project uses different Swift Packages, each package has its own set of tests. You can open them up in Xcode and run them, or you can use the `./run_tests.sh` script to run them all at once.
+
 ## Architecture
 
-![Architecture](https://github.com/arigoldfryd/ArticGallery/assets/12650891/f00f2723-6281-4175-94e3-eca8510ebe40)
+<img width="600" src="https://github.com/arigoldfryd/ArticGallery/assets/12650891/f00f2723-6281-4175-94e3-eca8510ebe40">
 
 The main app has been made as simple as possible. It's modularized using Swift Packages, and uses four packages:
 
